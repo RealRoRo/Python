@@ -1,0 +1,26 @@
+from Questions import Questions
+
+question_prompt = [
+    "Where is covid19 first started ? \n\n(a) India \n(b) China \n(c)US\n\n",
+    "what color are bananas normally ? \n\n(a)Dark Red \n(b) Orange \n(c)Yellow\n\n",
+    "what is the national animal of India ? \n\n(a) Giraffe \n(b) Peacock \n(c)Tiger\n\n"
+]
+
+Ques = [
+    Questions(question_prompt[0], "b"),
+    Questions(question_prompt[1], "c"),
+    Questions(question_prompt[2], "c")
+]
+
+
+def ask_ques():
+    score = 0
+    for i in Ques:
+        print(i.prompt)
+        ans = input()
+        if ans == i.answer:
+            score += 1
+    print("You Scored " + str(score) + "/" + str(len(Ques)) + " answers")
+
+
+ask_ques()
